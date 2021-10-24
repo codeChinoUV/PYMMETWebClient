@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/PYMMETWebClient/static/css/main.17756e12.chunk.css",
-    "main.js": "/PYMMETWebClient/static/js/main.c941f4a9.chunk.js",
-    "main.js.map": "/PYMMETWebClient/static/js/main.c941f4a9.chunk.js.map",
+    "main.js": "/PYMMETWebClient/static/js/main.70bf2fad.chunk.js",
+    "main.js.map": "/PYMMETWebClient/static/js/main.70bf2fad.chunk.js.map",
     "runtime-main.js": "/PYMMETWebClient/static/js/runtime-main.aed7e39f.js",
     "runtime-main.js.map": "/PYMMETWebClient/static/js/runtime-main.aed7e39f.js.map",
     "static/js/2.95d82aae.chunk.js": "/PYMMETWebClient/static/js/2.95d82aae.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.aed7e39f.js",
     "static/js/2.95d82aae.chunk.js",
     "static/css/main.17756e12.chunk.css",
-    "static/js/main.c941f4a9.chunk.js"
+    "static/js/main.70bf2fad.chunk.js"
   ]
 }
