@@ -6,10 +6,10 @@ export const StartScreen = () => {
     const styleClasses = useInternalStyles();
 
     return (
-      <div className={styleClasses.imgContainer}>
-          <img className={styleClasses.logoImg} src="/assets/LogoPYMEET.gif" alt="Logo"/>
-      </div>
-  )
+        <div className={styleClasses.imgContainer}>
+            <img className={styleClasses.logoImg} src="/assets/LogoPYMEET.gif" alt="Logo"/>
+        </div>
+    )
 }
 
 const useInternalStyles = makeStyles(() => ({

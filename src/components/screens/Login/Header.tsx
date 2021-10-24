@@ -15,10 +15,10 @@ export const Header = () => {
 }
 
 const useInternalStyles = makeStyles(() => ({
-    headerContainer:{
+    headerContainer: {
         position: "relative"
     },
-    header:{
+    header: {
         background: "url('/assets/headerLogin.jpg')",
         backgroundPositionY: "bottom",
         backgroundSize: "cover",
@@ -27,7 +27,7 @@ const useInternalStyles = makeStyles(() => ({
         alignItems: "flex-end",
         height: "190px",
     },
-    headerCover:{
+    headerCover: {
         width: "100vw",
         height: "190px",
         backgroundColor: "rgba(255,255,255,0.60)",

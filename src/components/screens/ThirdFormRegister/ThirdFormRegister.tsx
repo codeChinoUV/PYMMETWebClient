@@ -4,11 +4,22 @@ import {Stepper} from "../../common/Stepper";
 import {makeStyles} from "@mui/styles";
 import {SelectOption} from "../../common/SelectOption";
 import {TextInput} from "../../common/TextInput";
+import {useHistory} from "react-router-dom";
+import {TitleRegister} from "../../common/TitleRegister";
 
 const optionsTest = ['Prueba 1', 'Prueba 2'];
 
 export const ThirdFormRegister = () => {
     const styleClass = useInternalStyles();
+    const history = useHistory();
+
+    const goHome = () => {
+        history.push('/start-page');
+    }
+
+    const nexPage = () => {
+        history.push('/register/form/4');
+    }
 
     const [documentType, setDocumentType] = useState('');
     const [documentNumber, setDocumentNumber] = useState('');
@@ -19,16 +30,18 @@ export const ThirdFormRegister = () => {
     return (
         <div>
             <div>
+                <TitleRegister/>
                 <Stepper totalSteps={6}
                          currentStep={3}
                          containerStyles={styleClass.stepperContainer}
                          basePathSteps="/register/form/"/>
                 <div className={styleClass.containerElements}>
                     <p className={styleClass.subtitle}>Datos del responsable</p>
-                    <p className={styleClass.text}>Esta información nos permitira saber mas sobre el responsable de la PYME.</p>
+                    <p className={styleClass.text}>Esta información nos permitira saber mas sobre el responsable de la
+                        PYME.</p>
                 </div>
                 <div>
-                    <SelectOption fieldName="Tipo de documentp"
+                    <SelectOption fieldName="Tipo de documento"
                                   containerStyles={styleClass.containerElements}
                                   label="Tipo de documento"
                                   placeHolder="Selecciona el tipo"
@@ -39,33 +52,33 @@ export const ThirdFormRegister = () => {
                                containerStyles={styleClass.containerElements}
                                placeHolder="Numero de indentificación"
                                value={documentNumber}
-                               onChange={(v) => setDocumentNumber(v)} />
+                               onChange={(v) => setDocumentNumber(v)}/>
                     <TextInput fieldName="Nombre(s)"
                                containerStyles={styleClass.containerElements}
                                placeHolder="Nombre(s)"
                                value={name}
-                               onChange={(v) => setName(v)} />
+                               onChange={(v) => setName(v)}/>
                     <TextInput fieldName="Apellidos"
                                containerStyles={styleClass.containerElements}
                                placeHolder="Apellidos"
                                value={lastName}
-                               onChange={(v) => setLastName(v)} /><
+                               onChange={(v) => setLastName(v)}/><
                     TextInput fieldName="Teléfono"
-                               containerStyles={styleClass.containerElements}
-                               placeHolder="Numero de teléfono"
-                               value={number}
-                               onChange={(v) => setNumber(v)} />
+                              containerStyles={styleClass.containerElements}
+                              placeHolder="Numero de teléfono"
+                              value={number}
+                              onChange={(v) => setNumber(v)}/>
                 </div>
             </div>
             <div>
-                <ButtonsForm onCancel={() => {}} onSave={() => {}} containerStyles={styleClass.containerElements} />
+                <ButtonsForm onCancel={goHome} onSave={nexPage} containerStyles={styleClass.containerElements}/>
             </div>
         </div>
     )
 }
 
 const useInternalStyles = makeStyles(() => ({
-    screenContainer:{
+    screenContainer: {
         height: "100vh",
         display: "flex",
         flexDirection: "column",

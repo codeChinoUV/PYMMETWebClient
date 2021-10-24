@@ -20,14 +20,14 @@ export const Stepper = ({totalSteps, currentStep, basePathSteps, containerStyles
     return (
         <div className={containerStyles}>
             <div className={styleClass.stepperContainer}>
-                <hr className={styleClass.line} />
+                <hr className={styleClass.line}/>
                 {(() => {
                     const steps = [];
                     for (let i = 1; i <= totalSteps; i++) {
-                        if(i === currentStep){
-                            steps.push(<div className={styleClass.currentStep}>{ i }</div>);
-                        }else{
-                            steps.push(<div onClick={() => redirectToForm(i)} className={styleClass.step}>{ i }</div>);
+                        if (i === currentStep) {
+                            steps.push(<div className={styleClass.currentStep}>{i}</div>);
+                        } else {
+                            steps.push(<div onClick={() => redirectToForm(i)} className={styleClass.step}>{i}</div>);
                         }
                     }
                     return steps;

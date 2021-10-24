@@ -1,8 +1,18 @@
 import React from "react";
 import {makeStyles} from "@mui/styles";
+import {useHistory} from "react-router-dom";
 
 export const TypeUser = () => {
     const styleClasses = useInternalStyles();
+    const history = useHistory();
+
+    const register = () => {
+        history.push('/register');
+    }
+
+    const logIn = () => {
+        history.push('/login');
+    }
 
     return (
         <div className={styleClasses.loginContainer}>
@@ -12,8 +22,8 @@ export const TypeUser = () => {
             <div className={styleClasses.buttonsContainer}>
                 <p className={styleClasses.welcomeText}>¡Te damos la bienvenida a tu nueva
                     aplicación para PYMES!</p>
-                <button className={styleClasses.buttonLogin}>Iniciar sesión</button>
-                <button className={styleClasses.withoutAccount}>No soy cliente</button>
+                <button className={styleClasses.buttonLogin} onClick={logIn}>Iniciar sesión</button>
+                <button className={styleClasses.withoutAccount} onClick={register}>No soy cliente</button>
             </div>
         </div>
     )
@@ -21,7 +31,7 @@ export const TypeUser = () => {
 
 const useInternalStyles = makeStyles(() => ({
     loginContainer: {
-      height: "100vh",
+        height: "100vh",
         backgroundColor: "#072146"
     },
     imgContainer: {
@@ -34,7 +44,7 @@ const useInternalStyles = makeStyles(() => ({
         width: "150px",
         height: "203px"
     },
-    welcomeText:{
+    welcomeText: {
         fontStyle: "normal",
         fontWeight: "bold",
         fontSize: "18px",
