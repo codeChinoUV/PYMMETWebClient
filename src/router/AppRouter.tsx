@@ -20,6 +20,7 @@ import { RegisterCosts } from "../components/screens/RegisterInfo/RegisterCosts"
 import { RegisterOpening } from "../components/screens/RegisterInfo/RegisterOpening";
 
 export const AppRouter = () => {
+
   const location = useLocation();
   return (
     <TransitionGroup>
@@ -131,3 +132,4 @@ export const AppRouter = () => {
     </TransitionGroup>
   );
 };
+
