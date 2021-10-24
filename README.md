@@ -16,7 +16,7 @@ Para lograr esto, se ocupan los siguientes lenguajes de programación en las dif
 -	JavaScript
 -	TypeSctipt
 
-#Prototipo Web
+# Prototipo Web
 [Prototipo Web - Vista diseño](https://www.figma.com/proto/EpSGgU4RBZ4WpHlv0qCV59/PYMEET-Web?node-id=2%3A4&scaling=min-zoom&page-id=0%3A1/)
 [Prototipo Web](https://www.figma.com/file/EpSGgU4RBZ4WpHlv0qCV59/PYMEET-Web?node-id=0%3A1/)
 
