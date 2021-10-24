@@ -2,7 +2,6 @@ import { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 interface ISelectOptionProps {
@@ -12,6 +11,7 @@ interface ISelectOptionProps {
   label: string;
   value: string;
   containerStyles?: string;
+  placeHolder?: string;
 }
 
 export const SelectOption = ({
@@ -21,6 +21,7 @@ export const SelectOption = ({
   onChange,
   label,
   containerStyles = "",
+  placeHolder
 }: ISelectOptionProps) => {
   const [open, setOpen] = useState(false);
 
@@ -33,11 +34,12 @@ export const SelectOption = ({
   };
 
   const styles = useSelectStyle();
+  const styleClass = styles;
 
   return (
     <div className={`${styles.selectContainer} ${containerStyles}`}>
       <label className={styles.label} htmlFor={fieldName}>
-        {fieldName}
+        {label}
       </label>
 
       <Select
@@ -45,15 +47,18 @@ export const SelectOption = ({
         open={open}
         onClose={handleClose}
         onOpen={handleOpen}
+        displayEmpty
         labelId="select-label"
         value={value}
-        label="algo aqiu"
         onChange={(e) => onChange(e.target.value)}
         IconComponent={() => (
           <div className={styles.iconContainer} onClick={handleOpen}>
             <KeyboardArrowDownIcon fontSize="large" />
           </div>
         )}
+        renderValue={
+          value !== "" ? undefined : () => <div className={styles.placeHolder}>{placeHolder}</div>
+        }
       >
         {values.map((value, index) => (
           <MenuItem key={index} value={value}>
@@ -70,14 +75,22 @@ const useSelectStyle = makeStyles(() => ({
     display: "flex",
     flexDirection: "column",
   },
+  placeHolder:{
+    color: "#7a889c !important",
+    paddingLeft: "5px"
+  },
   select: {
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     borderRadius: "10px",
+    color: "#072146 !important",
+    fontSize: "18px !important",
+    border: "1px solid #F0F1F2 !important",
+    paddingLeft: "5px"
   },
   iconContainer: {
     marginTop: "-5px",
     width: "55px",
-    height: "57px",
+    height: "60px",
     boxShadow: "0px 3px 3px rgba(0, 0.25, 0, 0.25)",
     boxSizing: "border-box",
     display: "flex",

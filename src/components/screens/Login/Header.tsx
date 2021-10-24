@@ -20,6 +20,7 @@ const useInternalStyles = makeStyles(() => ({
     },
     header:{
         background: "url('/assets/headerLogin.jpg')",
+        backgroundPositionY: "bottom",
         backgroundSize: "cover",
         borderRadius: "0 0 35px 35px",
         display: "flex",
