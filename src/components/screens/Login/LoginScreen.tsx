@@ -2,17 +2,11 @@ import {TextInput} from "../../common/TextInput";
 import React, {useState} from "react";
 import {makeStyles} from "@mui/styles";
 import {Header} from "./Header";
-import {useHistory} from "react-router-dom";
 
 export const LoginScreen = () => {
 
     const styleClasses = useInternalStyles();
-    const history = useHistory();
 
-    const register = () => {
-        history.push('/register');
-    }
-    
     const [email, setEmail] = useState('');
 
     const [password, setPassword] = useState('');
@@ -32,8 +26,8 @@ export const LoginScreen = () => {
                            onChange={(v) => setPassword(v)}/>
             </div>
             <div className={styleClasses.buttonsContainer}>
-                <button className={styleClasses.buttonLogin} disabled>Iniciar sesión</button>
-                <button className={styleClasses.withoutAccount} onClick={register}>No soy cliente</button>
+                <button className={styleClasses.buttonLogin}>Iniciar sesión</button>
+                <button className={styleClasses.withoutAccount}>No soy cliente</button>
             </div>
         </div>
     )
@@ -67,24 +61,18 @@ const useInternalStyles = makeStyles(() => ({
         lineHeight: "16px",
         letterSpacing: "0.04em",
         textTransform: "uppercase",
-        width: "200px",
-        "&:disabled": {
-            backgroundColor: "grey"
-        }
+        width: "200px"
     },
     withoutAccount: {
         backgroundColor: "transparent",
-        //borderWidth: 0,
+        borderWidth: 0,
         fontWeight: "bold",
         fontSize: "18px",
-        padding: "18px 0",
         lineHeight: "21px",
         letterSpacing: "-0.24px",
         color: "#072146",
         marginTop: "30px",
-        width: "200px",
-        border: "3px solid #072146",
-        borderRadius: "6px",
+        width: "200px"
     },
     textInputContainer: {
         margin: "35px 31px"

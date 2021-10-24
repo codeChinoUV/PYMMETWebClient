@@ -3,6 +3,8 @@ import { makeStyles } from "@mui/styles";
 import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
 import { useHistory } from "react-router";
 
+const routerBaseName = process.env.PUBLIC_URL;
+
 export const RegisterOpening = () => {
   const styleClasses = useInternalStyles();
 
@@ -17,7 +19,7 @@ export const RegisterOpening = () => {
       <p className={styleClasses.textP}>REGISTRO PYMES</p>
       <img
         className={styleClasses.imgContainer}
-        src="/assets/PersonalFiles.png"
+        src={`${routerBaseName}/assets/PersonalFiles.png`}
         alt=""
       />
       <h2 className={styleClasses.title}>Requisitos de apertura</h2>
