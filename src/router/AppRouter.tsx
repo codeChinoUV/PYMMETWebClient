@@ -15,11 +15,16 @@ import {SixFormRegister} from "../components/screens/SixFormRegister/SixFormRegi
 import {SignatureForm} from "../components/screens/SixFormRegister/SignatureForm";
 import {RegisterComplete} from "../components/screens/RegisterComplete/RegisterComplete";
 
+import { RegisterHelp } from "../components/screens/RegisterInfo/RegisterHelp";
+import { RegisterCosts } from "../components/screens/RegisterInfo/RegisterCosts";
+import { RegisterOpening } from "../components/screens/RegisterInfo/RegisterOpening";
 
 export const AppRouter = () => {
     const location = useLocation();
     return (
-            <TransitionGroup>
+        
+        
+        <TransitionGroup>
                 <CSSTransition
                     timeout={300}
                     classNames='fade'
@@ -48,7 +53,9 @@ export const AppRouter = () => {
                                          component={SignatureForm}/>
                             <PublicRoute exact path="/register/form/end" isAuthenticated={false}
                                          component={RegisterComplete}/>
-
+                            <PublicRoute exact path="/register/help" isAuthenticated={false} component={RegisterHelp} />
+                            <PublicRoute exact path="/register/costs" isAuthenticated={false} component={RegisterCosts} />
+                            <PublicRoute exact path="/register/opening" isAuthenticated={false} component={RegisterOpening} />
                             {/* The root path should be at the end */}
                             <PublicRoute exact path="/" isAuthenticated={false} component={TypeUser}/>
                             <Redirect to="/welcome"/>
