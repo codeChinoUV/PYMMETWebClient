@@ -10,6 +10,11 @@ import {SecondFormRegister} from "../components/screens/SecondFormRegister/Secon
 import {ThirdFormRegister} from "../components/screens/ThirdFormRegister/ThirdFormRegister";
 import {ForthFormRegister} from "../components/screens/ForthFormRegister/ForthFormRegister";
 
+
+import { RegisterHelp } from "../components/screens/RegisterInfo/RegisterHelp";
+import { RegisterCosts } from "../components/screens/RegisterInfo/RegisterCosts";
+import { RegisterOpening } from "../components/screens/RegisterInfo/RegisterOpening";
+
 export const AppRouter = () => {
     return (
         <Router>
@@ -22,10 +27,12 @@ export const AppRouter = () => {
                 <PublicRoute exact path="/register/form/2" isAuthenticated={false} component={SecondFormRegister} />
                 <PublicRoute exact path="/register/form/3" isAuthenticated={false} component={ThirdFormRegister} />
                 <PublicRoute exact path="/register/form/4" isAuthenticated={false} component={ForthFormRegister} />
-
+                <PublicRoute exact path="/register/help" isAuthenticated={false} component={RegisterHelp} />
+                <PublicRoute exact path="/register/costs" isAuthenticated={false} component={RegisterCosts} />
+                <PublicRoute exact path="/register/opening" isAuthenticated={false} component={RegisterOpening} />
                 {/* The root path should be at the end */}
                 <PublicRoute exact path="/" isAuthenticated={false} component={TypeUser} />
-                <Redirect to="/register/form/1" />
+                <Redirect to="/register/opening"/>
             </div>
         </Router>
     )
