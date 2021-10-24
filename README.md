@@ -5,7 +5,8 @@ Se requiere buscar la solución para abrir nuestros productos al Open Market, at
 ### Hackaton BBVA 2021
 
 # Documento Técnico
-https://uvmx.sharepoint.com/:w:/s/HackathonBBVA2020/Ec3xMCb08GdGpr6AVnGfYDQBRrZ7rPzrmPth7-Y7gAPyJQ?e=pvmRn4
+[PYMETT Documento Técnico](https://uvmx-my.sharepoint.com/:w:/g/personal/zs17012957_estudiantes_uv_mx/EX9bHz0UyF1PgAm93jZhVxYB-EwF6byqIQ8626yqHnQIkg?e=3PXIYQ)
+
 
 # Lenguajes
 La solución está pensada para proveer el mayor alcance posible, por lo que las plataformas planteadas para la cobertura del sistema son 
@@ -25,14 +26,15 @@ Para lograr esto, se ocupan los siguientes lenguajes de programación en las dif
 
 # Link Deploy
 Preferiblemente, abrirlo desde un teléfono móvil
-https://codechinouv.github.io/PYMMETWebClient/
+
+[PYMETT.COM](https://codechinouv.github.io/PYMMETWebClient/)
 
 
 | Nombre                      | Usuario GitHub                 |
 |-----------------------------|--------------------------------|
-| David Bárcenas Durán        | https://github.com/davisbd100  |
-| Javier de Jesús Tapia Amaro | https://github.com/TapiaXavier |
-| José Miguel Quiroz Benítez  | https://github.com/codeChinoUV |
-| Gabriela Sandoval Cruz      | https://github.com/gaby2327    |
-| Diana Antonio Gómez         | https://github.com/DianaAG     |
-| José Arturo López García    | https://github.com/jarturogl05 |
+| David Bárcenas Durán        | [@Davisbd100](https://github.com/davisbd100)|
+| Javier de Jesús Tapia Amaro | [@TapiaXavier](https://github.com/TapiaXavier) |
+| José Miguel Quiroz Benítez  | [@CodeChinoUV](https://github.com/codeChinoUV) |
+| Gabriela Sandoval Cruz      | [@Gaby2327](https://github.com/gaby2327) |
+| Diana Antonio Gómez         | [@DianaAG](https://github.com/DianaAG) |
+| José Arturo López García    | [@Jarturogl05](https://github.com/jarturogl05)|
