@@ -27,8 +27,12 @@ Para lograr esto, se ocupan los siguientes lenguajes de programación en las dif
 # Link Deploy
 Preferiblemente, abrirlo desde un teléfono móvil
 
-[PYMETT.COM](https://codechinouv.github.io/PYMMETWebClient/)
+[PYMEET.COM](https://codechinouv.github.io/PYMMETWebClient/)
 
+# Video
+[PYMEET-Youtube](https://youtu.be/S6SKgJdaSwU)
+
+[PYMEET-Drive](https://uvmx-my.sharepoint.com/:v:/g/personal/zs17012957_estudiantes_uv_mx/EWG1BPMHwVBHo4ZOlkOEGTwBlN9qXfuHOEjRXK91JR_JBg?e=vmKday)
 
 | Nombre                      | Usuario GitHub                 |
 |-----------------------------|--------------------------------|
