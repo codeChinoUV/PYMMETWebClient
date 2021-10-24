@@ -2,6 +2,8 @@ import React from "react";
 import {makeStyles} from "@mui/styles";
 import {useHistory} from "react-router-dom";
 
+const routerBaseName = process.env.PUBLIC_URL;
+
 export const TypeUser = () => {
     const styleClasses = useInternalStyles();
     const history = useHistory();
@@ -17,7 +19,7 @@ export const TypeUser = () => {
     return (
         <div className={styleClasses.loginContainer}>
             <div className={styleClasses.imgContainer}>
-                <img className={styleClasses.imgLogo} src="/assets/LogoPYMEET.gif" alt="Logo"/>
+                <img className={styleClasses.imgLogo} src={`${routerBaseName}/assets/LogoPYMEET.gif`} alt="Logo"/>
             </div>
             <div className={styleClasses.buttonsContainer}>
                 <p className={styleClasses.welcomeText}>¡Te damos la bienvenida a tu nueva

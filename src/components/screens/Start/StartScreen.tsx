@@ -1,13 +1,15 @@
 import React from 'react';
 import {makeStyles} from "@mui/styles";
 
+const routerBaseName = process.env.PUBLIC_URL;
+
 export const StartScreen = () => {
 
     const styleClasses = useInternalStyles();
 
     return (
         <div className={styleClasses.imgContainer}>
-            <img className={styleClasses.logoImg} src="/assets/LogoPYMEET.gif" alt="Logo"/>
+            <img className={styleClasses.logoImg} src={`${routerBaseName}/assets/LogoPYMEET.gif`} alt="Logo"/>
         </div>
     )
 }

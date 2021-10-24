@@ -1,5 +1,7 @@
 import {makeStyles} from "@mui/styles";
 
+const routerBaseName = process.env.PUBLIC_URL;
+
 export const Header = () => {
     const styleClasses = useInternalStyles();
     return (
@@ -19,7 +21,7 @@ const useInternalStyles = makeStyles(() => ({
         position: "relative"
     },
     header: {
-        background: "url('/assets/startRegister.jpg')",
+        background: `url('${routerBaseName}/assets/startRegister.jpg')`,
         backgroundPositionY: "center",
         backgroundSize: "cover",
         borderRadius: "0 0 35px 35px",

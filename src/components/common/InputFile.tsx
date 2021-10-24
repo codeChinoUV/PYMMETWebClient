@@ -1,5 +1,7 @@
 import {makeStyles} from "@mui/styles";
 
+const routerBaseName = process.env.PUBLIC_URL;
+
 interface IInputFileProps {
     value: string;
     fieldName: string;
@@ -22,7 +24,7 @@ export const InputFile = ({value, fieldName, placeHolder, containerStyles}: IInp
                            className={styleClass.input}
                            type="text" disabled/>
                     <div className={styleClass.imgButtonContainer}>
-                        <img className={styleClass.imgCamera} src="/assets/camera.png" alt="Camera"/>
+                        <img className={styleClass.imgCamera} src={`${routerBaseName}/assets/camera.png`} alt="Camera"/>
                     </div>
                 </div>
             </div>

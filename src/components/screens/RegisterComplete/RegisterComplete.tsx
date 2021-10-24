@@ -4,6 +4,8 @@ import React from "react";
 import {makeStyles} from "@mui/styles";
 import {useHistory} from "react-router-dom";
 
+const routerBaseName = process.env.PUBLIC_URL;
+
 export const RegisterComplete = () => {
     const styleClass = useInternalStyles();
 
@@ -35,7 +37,7 @@ export const RegisterComplete = () => {
                         puedes relajarte.
                     </p>
                 </div>
-                <img className={styleClass.celebration} src="/assets/confetti.gif" alt=""/>
+                <img className={styleClass.celebration} src={`${routerBaseName}/assets/confetti.gif`} alt=""/>
             </div>
             <div className={styleClass.buttonCloseContainer}>
                 <button className={styleClass.nextButton} onClick={goHome}>Cerrar</button>

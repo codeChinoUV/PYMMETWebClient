@@ -9,6 +9,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import {ButtonsForm} from "../../common/ButonsForm";
 import {useHistory} from "react-router-dom";
 
+const routerBaseName = process.env.PUBLIC_URL;
+
 export const SecondFormRegister = () => {
     const styleClass = useInternalStyles();
     const history = useHistory();
@@ -33,7 +35,7 @@ export const SecondFormRegister = () => {
                 <p className={styleClass.text}>Este documento nos permitirá validar tu número de identificación.</p>
             </div>
             <div className={styleClass.scannerContainer}>
-                <img className={styleClass.scannerImg} src="/assets/scanner.png" alt="Scan"/>
+                <img className={styleClass.scannerImg} src={`${routerBaseName}/assets/scanner.png`} alt="Scan"/>
             </div>
             <div className={styleClass.cameraOptionContainer}>
                 <IconButton className={styleClass.cameraOption} aria-label="gallery">
