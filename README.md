@@ -5,7 +5,7 @@ Se requiere buscar la solución para abrir nuestros productos al Open Market, at
 ### Hackaton BBVA 2021
 
 # Documento Técnico
-[PYMEET Documento Técnico](https://uvmx-my.sharepoint.com/:b:/g/personal/zs17012957_estudiantes_uv_mx/EcxJikAg9tNNnn82kzyIWXsBeGaOM4axhynhR5AXiGftxQ?e=Cw1l1O)
+[PYMEET Documento Técnico](https://uvmx-my.sharepoint.com/:b:/g/personal/zs17012957_estudiantes_uv_mx/ESRwP2i_wOZJg-PMr9WN7FEBxEhjRXMe05jYiASLvSboNg?e=ws0Ixu)
 
 
 # Lenguajes
