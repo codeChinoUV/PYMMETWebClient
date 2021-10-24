@@ -5,7 +5,7 @@ Se requiere buscar la solución para abrir nuestros productos al Open Market, at
 ### Hackaton BBVA 2021
 
 # Documento Técnico
-Aqui ira el Link del doc
+https://uvmx.sharepoint.com/:w:/s/HackathonBBVA2020/Ec3xMCb08GdGpr6AVnGfYDQBRrZ7rPzrmPth7-Y7gAPyJQ?e=pvmRn4
 
 # Lenguajes
 La solución está pensada para proveer el mayor alcance posible, por lo que las plataformas planteadas para la cobertura del sistema son 
