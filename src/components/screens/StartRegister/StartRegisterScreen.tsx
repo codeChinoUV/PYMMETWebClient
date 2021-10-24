@@ -4,8 +4,9 @@ import {TextInput} from "../../common/TextInput";
 import {makeStyles} from "@mui/styles";
 import {CheckBox} from "../../common/CheckBox";
 import {SelectOption} from "../../common/SelectOption";
+import {useHistory} from "react-router-dom";
 
-const authenticationsOptions: string[] =['Huella digital', 'Mensaje SMS', 'Correo electronico' ];
+const authenticationsOptions: string[] = ['Huella digital', 'Mensaje SMS', 'Correo electronico'];
 
 const countriesOptions: string[] = ['México', 'Colombia', 'Otro'];
 
@@ -13,6 +14,16 @@ const countriesOptions: string[] = ['México', 'Colombia', 'Otro'];
 export const StartRegisterScreen = () => {
 
     const styleClass = useInternalStyles();
+
+    const history = useHistory();
+
+    const register = () => {
+        history.push('/register/form/1');
+    }
+
+    const logIn = () => {
+        history.push('/login');
+    }
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -23,25 +34,25 @@ export const StartRegisterScreen = () => {
     return (
         <div className={styleClass.screenContainer}>
             <div>
-                <Header />
+                <Header/>
                 <div>
                     <TextInput fieldName="Correo electrónico empresarial"
                                containerStyles={styleClass.textInputContainer}
-                               onChange={(v) => setEmail(v) }
+                               onChange={(v) => setEmail(v)}
                                placeHolder="jane@example.com"
-                               value={email} />
+                               value={email}/>
                     <TextInput fieldName="Contraseña"
                                containerStyles={styleClass.textInputContainer}
-                               onChange={(v) => setPassword(v) }
+                               onChange={(v) => setPassword(v)}
                                isPassword={true}
                                placeHolder="Ingresa la contraseña"
-                               value={password} />
+                               value={password}/>
                     <TextInput fieldName="Repita la contraseña"
                                containerStyles={styleClass.textInputContainer}
                                onChange={(v) => setRepeatPassword(v)}
                                value={repeatPassword}
                                placeHolder="Repite la contraseña"
-                               isPassword={true}  />
+                               isPassword={true}/>
                     <SelectOption fieldName="Opciones de autenticación"
                                   label="Opciones de autenticación"
                                   placeHolder="Selecciona una opción"
@@ -57,21 +68,21 @@ export const StartRegisterScreen = () => {
                                   values={countriesOptions}
                                   value={country}/>
                     <CheckBox fieldName="Acepto los terminos y condiciones"
-                              onChange={(e) =>setAgreeLicense(!e)}
+                              onChange={(e) => setAgreeLicense(!e)}
                               containerStyles={styleClass.textInputContainer}
-                              selected={agreeLicense} />
+                              selected={agreeLicense}/>
                 </div>
             </div>
             <div className={styleClass.buttonsContainer}>
-                <button className={styleClass.buttonLogin}>Abrir mi cuenta</button>
-                <button className={styleClass.withoutAccount}>Iniciar sesión</button>
+                <button className={styleClass.buttonLogin} onClick={register}>Abrir mi cuenta</button>
+                <button className={styleClass.withoutAccount} onClick={logIn}>Iniciar sesión</button>
             </div>
         </div>
     )
 }
 
 const useInternalStyles = makeStyles(() => ({
-    screenContainer:{
+    screenContainer: {
         height: "100vh",
         display: "flex",
         flexDirection: "column",

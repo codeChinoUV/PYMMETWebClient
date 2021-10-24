@@ -1,19 +1,24 @@
 import {makeStyles} from "@mui/styles";
 
-interface IButtonsFormProps{
+interface IButtonsFormProps {
     onSave: () => void;
     onCancel: () => void;
     containerStyles?: string;
+    isEnd?: boolean;
 }
 
-export const ButtonsForm = ({onCancel, onSave, containerStyles = ''}: IButtonsFormProps) => {
+export const ButtonsForm = ({onCancel, onSave, containerStyles = '', isEnd = false}: IButtonsFormProps) => {
     const styleClass = useInternalStyles();
 
     return (
         <div className={containerStyles}>
             <div className={styleClass.buttonsContainer}>
-                <button className={styleClass.latterButton} onClick={onSave}>Continuas más tarde</button>
-                <button className={styleClass.nextButton} onClick={onCancel}>Siguiente</button>
+                <button className={styleClass.latterButton} onClick={onCancel}>Continuar más tarde</button>
+                {
+                    (isEnd === true)
+                        ? (<button className={styleClass.nextButton} onClick={onSave}>¡Finalizar!'</button>)
+                        : (<button className={styleClass.nextButton} onClick={onSave}>Siguiente</button>)
+                }
             </div>
         </div>
     )
@@ -30,7 +35,7 @@ const useInternalStyles = makeStyles(() => ({
         border: "2px solid #072146",
         boxSizing: "border-box",
         borderRadius: "6px",
-        padding: "19px 40px",
+        padding: "19px 35px",
         fontWeight: 900,
         fontSize: "14px",
         lineHeight: "16px",
@@ -47,7 +52,7 @@ const useInternalStyles = makeStyles(() => ({
         border: "2px solid #DDE7F7",
         boxSizing: "border-box",
         borderRadius: "6px",
-        padding: "19px 40px",
+        padding: "19px 35px",
         fontWeight: 900,
         fontSize: "11px",
         lineHeight: "13px",
@@ -58,5 +63,5 @@ const useInternalStyles = makeStyles(() => ({
         textTransform: "uppercase",
         color: "#072146",
         filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"
-    }
+    },
 }));

@@ -7,44 +7,54 @@ import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import CloseIcon from '@mui/icons-material/Close';
 import {ButtonsForm} from "../../common/ButonsForm";
+import {useHistory} from "react-router-dom";
 
 export const SecondFormRegister = () => {
     const styleClass = useInternalStyles();
+    const history = useHistory();
+
+    const goHome = () => {
+        history.push('/start-page');
+    }
+
+    const nexPage = () => {
+        history.push('/register/form/3');
+    }
 
     return (
         <div className={styleClass.screenContainer}>
-            <TitleRegister />
+            <TitleRegister/>
             <Stepper totalSteps={6}
                      currentStep={2}
                      containerStyles={styleClass.stepperContainer}
                      basePathSteps="/register/form/"/>
             <div className={styleClass.containerElements}>
                 <p className={styleClass.subtitle}>Comprobante de identificación</p>
-                <p className={styleClass.text}>Este documento nos permitirá  validar tu número de identificación.</p>
+                <p className={styleClass.text}>Este documento nos permitirá validar tu número de identificación.</p>
             </div>
             <div className={styleClass.scannerContainer}>
                 <img className={styleClass.scannerImg} src="/assets/scanner.png" alt="Scan"/>
             </div>
             <div className={styleClass.cameraOptionContainer}>
                 <IconButton className={styleClass.cameraOption} aria-label="gallery">
-                    <InsertPhotoIcon />
+                    <InsertPhotoIcon/>
                 </IconButton>
                 <IconButton className={styleClass.shotButton} aria-label="shot" size="large">
-                    <CameraAltIcon />
+                    <CameraAltIcon/>
                 </IconButton>
                 <IconButton className={styleClass.cameraOption} aria-label="shot">
-                    <CloseIcon />
+                    <CloseIcon/>
                 </IconButton>
             </div>
             <div>
-                <ButtonsForm onCancel={() => {}} onSave={() => {}} containerStyles={styleClass.containerElements} />
+                <ButtonsForm onCancel={goHome} onSave={nexPage} containerStyles={styleClass.containerElements}/>
             </div>
         </div>
     )
 }
 
 const useInternalStyles = makeStyles(() => ({
-    screenContainer:{
+    screenContainer: {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -85,7 +95,7 @@ const useInternalStyles = makeStyles(() => ({
         height: "300px",
         width: "300px",
     },
-    cameraOptionContainer:{
+    cameraOptionContainer: {
         display: "flex",
         justifyContent: "space-evenly",
     },

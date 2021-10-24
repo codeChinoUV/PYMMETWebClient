@@ -2,23 +2,29 @@ import {makeStyles} from "@mui/styles";
 
 interface IInputFileProps {
     value: string;
-    onChange:  (value: string) => void;
     fieldName: string;
-    TitleForScanScreen: string;
-    TextForScanScreen: string;
+    onClickAddFile: () => void;
     placeHolder?: string;
     containerStyles?: string,
-
 }
 
-export const InputFile = ({value, fieldName, onChange, placeHolder, containerStyles}: IInputFileProps) => {
+export const InputFile = ({value, fieldName, placeHolder, containerStyles}: IInputFileProps) => {
     const styleClass = useInternalStyles();
     return (
-        <div className={styleClass.inputContainer}>
-            <label htmlFor=""></label>
-            <input className={styleClass.input} type="text" disabled  />
-            <div className={styleClass.imgButtonContainer}>
-                <img src="/assets/camera.png" alt="Camera"/>
+        <div className={containerStyles}>
+            <div>
+                <label className={styleClass.label} htmlFor={fieldName}>{fieldName}</label>
+                <div className={styleClass.inputContainer}>
+                    <input id={fieldName}
+                           name={fieldName}
+                           value={value}
+                           placeholder={placeHolder}
+                           className={styleClass.input}
+                           type="text" disabled/>
+                    <div className={styleClass.imgButtonContainer}>
+                        <img className={styleClass.imgCamera} src="/assets/camera.png" alt="Camera"/>
+                    </div>
+                </div>
             </div>
         </div>
     )
@@ -29,11 +35,19 @@ const useInternalStyles = makeStyles(() => ({
         position: "relative"
     },
     input: {
+        marginTop: "5px",
         background: "#FFFFFF",
         border: "1px solid #F0F1F2",
         boxSizing: "border-box",
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-        borderRadius: "10px"
+        borderRadius: "10px",
+        fontSize: "18px",
+        lineHeight: "21px",
+        color: "#072146",
+        padding: "16px 70px 16px 25px",
+        "&:disabled": {
+            color: "#072146",
+        }
     },
     imgButtonContainer: {
         background: "#FFFFFF",
@@ -47,10 +61,19 @@ const useInternalStyles = makeStyles(() => ({
         width: "50px",
         position: "absolute",
         right: 0,
-        top: 0
+        top: 0,
+        bottom: 0
     },
-    imgCamera:{
+    imgCamera: {
         height: "30px",
         width: "30px"
-    }
+    },
+    label: {
+        fontStyle: "normal",
+        fontWeight: "bold",
+        fontSize: "14px",
+        lineHeight: "16px",
+        color: "#072146",
+        marginBottom: "10px"
+    },
 }));

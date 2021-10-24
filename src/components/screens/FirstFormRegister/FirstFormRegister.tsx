@@ -5,6 +5,7 @@ import {TextInput} from "../../common/TextInput";
 import React, {useState} from "react";
 import {ButtonsForm} from "../../common/ButonsForm";
 import {SelectOption} from "../../common/SelectOption";
+import {useHistory} from "react-router-dom";
 
 const optionsEconomicSector = ['Prueba 1', 'Prueba 2'];
 const optionsAnnualSalesRange = ['Prueba 1', 'Prueba 2'];
@@ -12,6 +13,15 @@ const optionTypesTaxPayer = ['Persona moral', 'Persona fisica'];
 
 export const FirstFormRegister = () => {
     const styleClass = useInternalStyles();
+    const history = useHistory();
+
+    const goHome = () => {
+        history.push('/start-page');
+    }
+
+    const nexPage = () => {
+        history.push('/register/form/2');
+    }
 
     const [documentId, setDocumentId] = useState('');
     const [economicSector, setEconomicSector] = useState('');
@@ -21,7 +31,7 @@ export const FirstFormRegister = () => {
     return (
         <div className={styleClass.screenContainer}>
             <div>
-                <TitleRegister />
+                <TitleRegister/>
                 <Stepper totalSteps={6}
                          currentStep={1}
                          containerStyles={styleClass.stepperContainer}
@@ -56,18 +66,19 @@ export const FirstFormRegister = () => {
                                containerStyles={styleClass.containerElements}
                                onChange={setDocumentId}
                                placeHolder="Ingrese el número de identificación"
-                               fieldName="Numero de identificación del documento" />
+                               fieldName="Numero de identificación del documento"/>
                 </div>
             </div>
             <div>
-                <ButtonsForm onCancel={() => {}} onSave={() => {}} containerStyles={styleClass.containerElements} />
+                <ButtonsForm
+                    onCancel={goHome} onSave={nexPage} containerStyles={styleClass.containerElements}/>
             </div>
         </div>
     )
 }
 
 const useInternalStyles = makeStyles(() => ({
-    screenContainer:{
+    screenContainer: {
         height: "100vh",
         display: "flex",
         flexDirection: "column",

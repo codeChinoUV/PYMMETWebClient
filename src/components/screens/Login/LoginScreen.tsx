@@ -13,17 +13,17 @@ export const LoginScreen = () => {
 
     return (
         <div>
-            <Header />
+            <Header/>
             <div>
                 <TextInput containerStyles={styleClasses.textInputContainer}
                            fieldName="Correo electronico"
                            value={email}
-                           onChange={(v) => setEmail(v)} />
+                           onChange={(v) => setEmail(v)}/>
                 <TextInput containerStyles={styleClasses.textInputContainer}
                            fieldName="Contraseña"
                            value={password}
                            isPassword={true}
-                           onChange={(v) => setPassword(v)} />
+                           onChange={(v) => setPassword(v)}/>
             </div>
             <div className={styleClasses.buttonsContainer}>
                 <button className={styleClasses.buttonLogin}>Iniciar sesión</button>

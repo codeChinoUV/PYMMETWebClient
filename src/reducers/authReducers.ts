@@ -22,7 +22,7 @@ const initialState: IAuthReducerState = {
 }
 
 export const authReducer = (state = initialState, action: AuthActions) => {
-    switch (action.type){
+    switch (action.type) {
         case "signIn":
             /**
              * Modify to action to do
