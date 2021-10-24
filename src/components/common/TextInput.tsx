@@ -2,27 +2,30 @@ import {makeStyles} from "@mui/styles";
 
 interface ITextInputProps {
     value: string;
-    onChange:  (value: string) => void;
+    onChange: (value: string) => void;
     fieldName: string;
     placeHolder?: string;
     isPassword?: boolean;
     containerStyles?: string,
 }
 
-export const TextInput = ({value, fieldName, onChange, isPassword = false,
+export const TextInput = ({
+                              value, fieldName, onChange, isPassword = false,
                               placeHolder = '',
-                              containerStyles = ''}: ITextInputProps) => {
+                              containerStyles = ''
+                          }: ITextInputProps) => {
     const styles = useInputStyle();
 
     return (
         <div className={containerStyles}>
             <div className={styles.inputContainer}>
-                <label className={styles.label} htmlFor={fieldName}>{ fieldName }</label>
+                <label className={styles.label} htmlFor={fieldName}>{fieldName}</label>
                 <input className={styles.input}
                        id={fieldName}
                        name={fieldName}
                        placeholder={placeHolder}
-                       type={(isPassword) ? 'password' : 'text'} value={value} onChange={(e) => onChange(e.target.value) }/>
+                       type={(isPassword) ? 'password' : 'text'} value={value}
+                       onChange={(e) => onChange(e.target.value)}/>
             </div>
         </div>
 

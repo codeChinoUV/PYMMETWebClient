@@ -18,7 +18,7 @@ export const CheckBox = ({selected, fieldName, onChange, containerStyles = ''}: 
                     id={fieldName}
                     type="checkbox"
                     checked={selected}
-                    onChange={(e) => onChange(!e.target.checked)} />
+                    onChange={(e) => onChange(!e.target.checked)}/>
                 {fieldName}
             </label>
         </div>
