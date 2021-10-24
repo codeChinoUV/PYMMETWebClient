@@ -1,41 +1,50 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
+import { useHistory } from "react-router";
+
+const routerBaseName = process.env.PUBLIC_URL;
 
 export const RegisterCosts = () => {
   const styleClasses = useInternalStyles();
+
+  const history = useHistory();
+
+  const nextPage = () => {
+    history.push('/register/opening');
+  }
 
   return (
     <div className={styleClasses.container}>
       <p className={styleClasses.textP}>REGISTRO PYMES</p>
       <img
         className={styleClasses.imgContainer}
-        src="/assets/Finance.png"
+        src={`${routerBaseName}/assets/Finance.png`}
         alt=""
       />
       <h2 className={styleClasses.title}>Costos mensuales</h2>
       <div className={styleClasses.textContainer}>
+        <CheckCircleOutlineOutlinedIcon className={styleClasses.icon} />
         <div>
-          <CheckCircleOutlineOutlinedIcon className={styleClasses.icon} />
-          <p className={styleClasses.textInfo}>Banca por internet PYME</p>
+            <p className={styleClasses.textInfo}>Banca por internet PYME</p>
+            <p className={styleClasses.money}>$0.00</p>
         </div>
-        <p className={styleClasses.money}>$0.00</p>
       </div>
       <div className={styleClasses.textContainer}>
+        <CheckCircleOutlineOutlinedIcon className={styleClasses.icon} />
         <div>
-          <CheckCircleOutlineOutlinedIcon className={styleClasses.icon} />
+          <p className={styleClasses.money}>$664.00</p>
           <p className={styleClasses.textInfo}>Banca electrónica</p>
         </div>
-        <p className={styleClasses.money}>$664.00</p>
       </div>
       <div className={styleClasses.textContainer}>
+        <CheckCircleOutlineOutlinedIcon className={styleClasses.icon} />
         <div>
-          <CheckCircleOutlineOutlinedIcon className={styleClasses.icon} />
           <p className={styleClasses.textInfo}>Cuenta empresarial</p>
+          <p className={styleClasses.money}>$0.00</p>
         </div>
-        <p className={styleClasses.money}>$0.00</p>
       </div>
-      <button className={styleClasses.nextButton}>¡REGISTARME YA!</button>
+      <button className={styleClasses.nextButton} onClick={nextPage}>SIGUIENTE</button>
     </div>
   );
 };
@@ -72,7 +81,7 @@ const useInternalStyles = makeStyles(() => ({
   textContainer: {
     display: "flex",
     justifyContent: "center",
-    flexDirection: "column",
+    alignItems: "center",
     width: "50%",
     marginBottom: "1rem",
   },

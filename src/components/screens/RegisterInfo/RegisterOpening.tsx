@@ -1,16 +1,25 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
+import { useHistory } from "react-router";
+
+const routerBaseName = process.env.PUBLIC_URL;
 
 export const RegisterOpening = () => {
   const styleClasses = useInternalStyles();
+
+  const history = useHistory();
+
+  const nextPage = () => {
+    history.push('/register');
+  }
 
   return (
     <div className={styleClasses.container}>
       <p className={styleClasses.textP}>REGISTRO PYMES</p>
       <img
         className={styleClasses.imgContainer}
-        src="/assets/PersonalFiles.png"
+        src={`${routerBaseName}/assets/PersonalFiles.png`}
         alt=""
       />
       <h2 className={styleClasses.title}>Requisitos de apertura</h2>
@@ -38,7 +47,7 @@ export const RegisterOpening = () => {
           </p>
         </div>
       </div>
-      <button className={styleClasses.nextButton}>¡REGISTARME YA!</button>
+      <button className={styleClasses.nextButton} onClick={nextPage}>¡REGISTARME YA!</button>
     </div>
   );
 };

@@ -9,7 +9,7 @@ export const TypeUser = () => {
     const history = useHistory();
 
     const register = () => {
-        history.push('/register');
+        history.push('/register/help');
     }
 
     const logIn = () => {
